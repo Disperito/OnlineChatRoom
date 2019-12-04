@@ -25,5 +25,5 @@ hs_err_pid*
 /out/
 /.idea/
 /src/main/webapp/WEB-INF/
-!/src/main/webapp/WEB-INF/web.xml
+!src/main/webapp/WEB-INF/web.xml
 /src/main/resources/properties/
