@@ -26,3 +26,4 @@ hs_err_pid*
 /.idea/
 /src/main/webapp/WEB-INF/ChatRoom/
 /src/main/webapp/WEB-INF/classes/
+/src/main/resources/properties/
