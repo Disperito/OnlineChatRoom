@@ -6,8 +6,11 @@
         <sourceOutputDir name="src/main/webapp/WEB-INF/generated-sources/annotations" />
         <sourceTestOutputDir name="src/main/webapp/WEB-INF/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ChatRoom" />
+        <module name="OnlineChatroom" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="ChatRoom" target="1.11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

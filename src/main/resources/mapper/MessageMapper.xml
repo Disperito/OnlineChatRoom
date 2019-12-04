@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dmwqaq.chat_room.mapper.MessageMapper">
+
+    <resultMap id="msgMap" type="cn.dmwqaq.chat_room.pojo.Message">
+        <id     column="id"               property="id"           javaType="java.lang.String"/>
+        <result column="create_time"      property="createTime"   javaType="java.util.Date"/>
+        <result column="content"          property="content"      javaType="java.lang.String"/>
+        <result column="source_user_id"   property="sourceUserId" javaType="java.lang.String"/>
+        <result column="target"           property="target"       javaType="java.lang.String"/>
+        <result column="is_withdrawn"     property="withdrawn"    javaType="java.lang.Boolean"/>
+    </resultMap>
+
+    <select id="getById" parameterType="java.lang.String" resultMap="msgMap"
+            useCache="false" flushCache="true">
+        SELECT id, create_time, content, source_user_id, target, is_withdrawn
+        FROM message_info
+        WHERE id = #{id}
+    </select>
+
+    <insert id="create" parameterType="cn.dmwqaq.chat_room.pojo.Message">
+        INSERT INTO message_info(create_time, update_time, content, source_user_id, target)
+        VALUES(#{createTime}, #{createTime}, #{content}, #{sourceUserId}, #{target})
+    </insert>
+
+</mapper>

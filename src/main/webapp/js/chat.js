@@ -1,23 +1,30 @@
 function send() {
+    let isPrivateChat = chatTarget !== 'all';
+
     const messageContainer = $(".message-container");
     const textInput = $("#input_area");
     const text = textInput.val();
     if (!text) {
         alert('请输入内容');
+        return;
     }
     const datetime = dateFormat(new Date());
 
+    const sourceDOM = $("<div></div>").addClass("message-source").text(
+        (isPrivateChat ? '[私聊 -> ' + chatTargetName + ']  ' : '') +
+        thisUserName + '：');
     const contentDOM = $("<div></div>").addClass("message-content").text(text);
     contentDOM.html(contentDOM.html().replace(/\n/g, '<br/>'));
     const datetimeDOM = $("<div></div>").addClass("message-datetime").text(datetime);
     const messageDOM = $("<div></div>").addClass("message").addClass("message-this");
 
+    messageDOM.append(sourceDOM);
     messageDOM.append(contentDOM);
     messageDOM.append(datetimeDOM);
     messageContainer.append(messageDOM);
     updateScroll();
     textInput.val('');
-    sendMessage(text, 'all');
+    sendMessage(text, chatTarget);
 }
 
 function dateFormat(date) {
@@ -27,7 +34,7 @@ function dateFormat(date) {
     const HH = date.getHours()
     const mm = date.getMinutes();
     const ss = date.getSeconds();
-    return yyyy + '-' + MM + '-' + dd + '-' + HH + ':' + mm + ':' + ss;
+    return yyyy + '-' + MM + '-' + dd + '  ' + HH + ':' + mm + ':' + ss;
 }
 
 function updateScroll() {
@@ -43,12 +50,18 @@ function receive(messageJSON) {
     const messageContainer = $(".message-container");
     const text = messageJSON.content;
     const datetime = dateFormat(new Date());
+    const sourceName = messageJSON.sourceName;
+    const isPrivateChat = messageJSON.target !== 'all';
 
+    const sourceDOM = $("<div></div>").addClass("message-source").text(
+        (isPrivateChat ? '[私聊]  ' : '') +
+        sourceName + '：');
     const contentDOM = $("<div></div>").addClass("message-content").text(text);
     contentDOM.html(contentDOM.html().replace(/\n/g, '<br/>'));
     const datetimeDOM = $("<div></div>").addClass("message-datetime").text(datetime);
     const messageDOM = $("<div></div>").addClass("message").addClass("message-that");
 
+    messageDOM.append(sourceDOM);
     messageDOM.append(contentDOM);
     messageDOM.append(datetimeDOM);
     messageContainer.append(messageDOM);
@@ -69,3 +82,4 @@ function testReceive() {
     messageContainer.append(newMessage);
     updateScroll();
 }*/
+

@@ -2,6 +2,7 @@ let websocket = null;
 const host = document.location.host;
 
 let userId = null;
+let thisUserName = null;
 
 function webSocketInit(userIdArg) {
     userId = userIdArg;
@@ -51,14 +52,12 @@ function sendMessage(content, target) {
         type: 'message',
         content: content,
         source: userId,
+        sourceName: thisUserName,
         target: target
     };
     websocket.send(JSON.stringify(message));
 }
 
-function receiveMessage() {
-
-}
 
 function updateOnlineList(onlineUsers) {
     let id, name;
@@ -67,10 +66,29 @@ function updateOnlineList(onlineUsers) {
     for (let key in onlineUsers) {
         id = key;
         name = onlineUsers[key];
-        let newLine = $("<li></li>").text(name);
+        let newLine = "<li><a onclick=\"chooseChatTarget('" + id + "','" + name + "')\">" + name + "</a></li>";
         userList.append(newLine);
     }
 }
+
+function chooseChatTarget(id, name) {
+    if (parseInt(id) === parseInt(userId)) {
+        return;
+    }
+    chatTarget = id;
+    chatTargetName = name;
+    let private_chat_tip = "<div class=\"well private-chat-tip\">\n" +
+        "<p>您当前正在和" + name + "私聊哦！<a onclick=\"switchToGroupChat()\">点此</a>恢复至群聊模式</p>\n" +
+        "</div>";
+    $("#main_well").append(private_chat_tip);
+}
+
+function switchToGroupChat() {
+    chatTarget = "all";
+    $(".private-chat-tip").remove();
+}
+
+
 
 
 

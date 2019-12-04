@@ -5,23 +5,25 @@
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
 
-        <File name="webRootFile" fileName="${web:rootDir}/logs/log.log">
+        <File name="webRootFile" fileName="${catalina.home}/logs/log.log">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
 
-        <File name="mybatisAppender" fileName="${web:rootDir}/logs/mybatis.log">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-        </File>
+<!--        <File name="mybatisAppender" fileName="${web:rootDir}/logs/mybatis.log">-->
+<!--            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
+<!--        </File>-->
     </Appenders>
 
     <Loggers>
         <Root level="all">
-            <AppenderRef ref="Console" level="TRACE"/>
-            <AppenderRef ref="webRootFile" level="TRACE"/>
+            <AppenderRef ref="Console" level="ERROR"/>
+<!--            <AppenderRef ref="webRootFile" level="ERROR"/>-->
         </Root>
 
-        <logger name="cn.dmwqaq.onlinechatroom.socket" level="TRACE">
-            <AppenderRef ref="webRootFile"/>
+
+        <logger name="cn.dmwqaq.chat_room.mapper" level="TRACE">
+            <AppenderRef ref="Console"/>
+<!--            <AppenderRef ref="webRootFile"/>-->
         </logger>
 
     </Loggers>

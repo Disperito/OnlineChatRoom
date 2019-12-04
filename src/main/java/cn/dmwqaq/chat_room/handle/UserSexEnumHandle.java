@@ -18,8 +18,8 @@ public class UserSexEnumHandle extends BaseTypeHandler<User.UserSex> {
     }
 
     @Override
-    public void setNonNullParameter(PreparedStatement ps, int i, User.UserSex parameter, JdbcType jdbcType) throws
-                                                                                                           SQLException {
+    public void setNonNullParameter(PreparedStatement ps, int i,
+            User.UserSex parameter, JdbcType jdbcType) throws SQLException {
         ps.setInt(i, parameter.getValue());
     }
 

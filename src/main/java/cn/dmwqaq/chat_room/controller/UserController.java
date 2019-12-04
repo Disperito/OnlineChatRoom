@@ -5,9 +5,11 @@ import cn.dmwqaq.chat_room.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -18,13 +20,10 @@ public class UserController {
 
     private static Logger logger = LogManager.getLogger(UserController.class);
 
-    private final UserService userService;
+    @Resource
+    private UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @PostMapping(value = "/login")
     public void login(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/html");
 
@@ -50,7 +49,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/logout")
+    @DeleteMapping(value = "/logout")
     public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             request.getSession().removeAttribute("userId");

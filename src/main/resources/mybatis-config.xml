@@ -28,7 +28,7 @@
         </environment>
     </environments>
 
-    <mappers>
-        <mapper resource="cn/dmwqaq/chat_room/mapper/UserMapper.xml"/>
-    </mappers>
+<!--    <mappers>-->
+<!--        <mapper resource="cn/dmwqaq/chat_room/mapper/*Mapper.xml"/>-->
+<!--    </mappers>-->
 </configuration>

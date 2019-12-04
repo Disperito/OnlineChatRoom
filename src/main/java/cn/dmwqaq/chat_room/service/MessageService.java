@@ -4,10 +4,10 @@ import cn.dmwqaq.chat_room.pojo.Message;
 
 public interface MessageService {
 
-    public Message getById(String id) throws Exception;
+    Message getById(String id) throws Exception;
 
-    public boolean create(Message message) throws Exception;
+    boolean create(Message message) throws Exception;
 
-    public boolean update(Message message) throws Exception;
+//    boolean update(Message message) throws Exception;
 
 }

@@ -1,24 +1,18 @@
 package cn.dmwqaq.chat_room.service.impl;
 
-import cn.dmwqaq.chat_room.factory.MapperFactory;
 import cn.dmwqaq.chat_room.mapper.MessageMapper;
 import cn.dmwqaq.chat_room.pojo.Message;
 import cn.dmwqaq.chat_room.service.MessageService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.util.Date;
+
+@Service
 public class MessageServiceImpl implements MessageService {
 
-    private static Logger logger = LogManager.getLogger(MessageServiceImpl.class);
-    private static MessageMapper messageMapper;
-
-    static {
-        try {
-            messageMapper = MapperFactory.getMessageMapper();
-        } catch (Exception e) {
-            logger.error(e.getMessage(), e);
-        }
-    }
+    @Resource
+    private MessageMapper messageMapper;
 
     @Override
     public Message getById(String id) throws Exception {
@@ -27,11 +21,15 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public boolean create(Message message) throws Exception {
+        if (message.getCreateTime() == null) {
+            message.setCreateTime(new Date());
+        }
         return messageMapper.create(message) > 0;
     }
 
-    @Override
-    public boolean update(Message message) throws Exception {
-        return messageMapper.updade(message) > 0;
-    }
+//    @Override
+//    public boolean update(Message message) throws Exception {
+//        return messageMapper.update(message) > 0;
+//    }
+
 }

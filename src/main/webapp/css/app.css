@@ -9,7 +9,7 @@
     /*overflow: auto;*/
 }
 
-#main .col-md-2, #main .col-md-10 {
+#main .col-xs-2, #main .col-xs-10 {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
 }
@@ -49,25 +49,14 @@
 
 #users_list_well {
     position: relative;
-    border-radius: 0px;
+    border-radius: 0;
     background-color: #dedede;
 }
 
-#users_list_well a:focus {
+#user_list li a {
     color: black;
     text-decoration: black;
 }
-
-#users_list_well a:hover {
-    color: black;
-    text-decoration: black;
-}
-
-#collapse1 p, #collapse2 p {
-    /*padding-left: 20px;*/
-    margin-left: 20px;
-}
-
 
 #main_well {
     margin: 0 0 0 0;
@@ -119,6 +108,21 @@
     word-break: break-all;
 }
 
+.message-source {
+    display: table;
+    font-size: 9px;
+}
+
+.message-this .message-source {
+    float: right;
+    clear: both;
+}
+
+.message-that .message-source {
+    float: left;
+    clear: both;
+}
+
 .message-this {
     float: right;
     clear: both;
@@ -129,7 +133,6 @@
     float: left;
     clear: both;
     margin-left: 15px;
-
 }
 
 .message-this .message-content {
@@ -146,6 +149,8 @@
     color: black;
     padding: 5px 10px 5px 10px;
     border-radius: 8px;
+    float: left;
+    clear: both;
 }
 
 .message-datetime {
@@ -163,3 +168,18 @@
     clear: both;
 }
 
+.private-chat-tip {
+    z-index: 920;
+    position: absolute;
+    margin: 0 0 0 0;
+    text-align: center;
+    padding: 5px 5px 0px 5px;
+    top: 323px;
+    right: 2px;
+    border-radius: 5px;
+    background-color: #dec1d4;
+}
+
+.private-chat-tip p {
+    white-space:nowrap;
+}

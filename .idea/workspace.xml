@@ -2,38 +2,88 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="ChatRoom:war exploded" />
+      <artifact name="OnlineChatroom:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9871afa5-ce47-407d-8659-d064ef1815b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/properties/druid.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/properties/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ChatRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ChatRoom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65d1b864-4f19-447c-8b35-bb88eeba75e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/65d1b864-4f19-447c-8b35-bb88eeba75e7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Disperito.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Disperito.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ChatRoom.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/socket/WebSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/socket/WebSocketServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/factory/MapperFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/handle/UserSexEnumHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/handle/UserSexEnumHandle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/mapper/MessageMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/mapper/MessageMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/pojo/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/pojo/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/MessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/impl/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/socket/WebSocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/dmwqaq/chat_room/server/WebSocketServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/WebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/WebSocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/config/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/config/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/WebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/WebSocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/classes/cn/dmwqaq/chat_room/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/ChatRoom/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/ChatRoom/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/jquery-2.1.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/classes/cn/dmwqaq/chat_room/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/WebSocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/ChatRoom/js/jquery-2.1.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/META-INF/ChatRoom.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/cn/dmwqaq/chat_room/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/config/springmvc-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/classes/springmvc-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/index.1html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/WebSocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/chat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ChatRoom/js/jquery-2.1.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/META-INF/ChatRoom.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/META-INF/ChatRoom.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/cn/dmwqaq/chat_room/mapper/UserMapper.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/config/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/config/springmvc-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/springmvc-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/springmvc-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/springmvc-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.1html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/WebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/WebSocket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/chat.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,13 +143,21 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="ChatRoom/invalid/Spring" />
+      <facet id="ChatRoom/invalid/Web" />
+    </ignored-facets>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -117,11 +175,20 @@
   </component>
   <component name="ProjectId" id="1U9A3YXlO87QZ8ARFCa67VkTtcJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/css" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -131,36 +198,92 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20406279" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JSP" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="cn.dmwqaq.chat_room.service" />
+      <recent name="cn.dmwqaq.chat_room.mapper" />
+      <recent name="cn.dmwqaq.chat_room.service.impl" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\ChatRoom\src\main\resources" />
       <recent name="D:\IdeaProjects\ChatRoom\src\main\webapp\css" />
       <recent name="D:\IdeaProjects\ChatRoom\src\main\webapp" />
       <recent name="D:\IdeaProjects\ChatRoom\src\main\config" />
       <recent name="D:\IdeaProjects\ChatRoom\src\main\java\cn\dmwqaq\chat_room" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\ChatRoom\src\main\resources\mapper" />
       <recent name="D:\IdeaProjects\ChatRoom\src\main\resources" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.22">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/ChatRoom/src/main/webapp/index.html" useBuiltInWebServerPort="true">
+    <configuration name="MessageServiceTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoom" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.dmwqaq.chat_room.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.dmwqaq.chat_room.service" />
+      <option name="MAIN_CLASS_NAME" value="cn.dmwqaq.chat_room.service.MessageServiceTest" />
+      <option name="METHOD_NAME" value="create" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MessageServiceTest.getById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoom" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.dmwqaq.chat_room.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.dmwqaq.chat_room.service" />
+      <option name="MAIN_CLASS_NAME" value="cn.dmwqaq.chat_room.service.MessageServiceTest" />
+      <option name="METHOD_NAME" value="getById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MessageServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoom" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MessageServiceTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImpl.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChatRoom" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.dmwqaq.chat_room.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.dmwqaq.chat_room.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="cn.dmwqaq.chat_room.service.impl.UserServiceImpl" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dev-index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/ChatRoom/src/main/webapp/dev-index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 9.0.22" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.22" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -168,7 +291,7 @@
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <deployment>
-        <artifact name="ChatRoom:war exploded">
+        <artifact name="OnlineChatroom:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
@@ -233,19 +356,46 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="ChatRoom:war exploded" />
+          <artifact name="OnlineChatroom:war exploded" />
         </option>
       </method>
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="JavaScript Debug.dev-index.html" />
+      <item itemvalue="JUnit.MessageServiceTest.create" />
+      <item itemvalue="JUnit.MessageServiceTest.getById" />
+      <item itemvalue="JUnit.MessageServiceTest.test" />
+      <item itemvalue="JUnit.UserServiceImpl.test" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.22" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.dev-index.html" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.15437159" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -265,6 +415,15 @@
       <workItem from="1574954369038" duration="1366000" />
       <workItem from="1575007358713" duration="809000" />
       <workItem from="1575010140176" duration="6782000" />
+      <workItem from="1575191174114" duration="3835000" />
+      <workItem from="1575285937144" duration="31000" />
+      <workItem from="1575286968092" duration="4461000" />
+      <workItem from="1575353123891" duration="542000" />
+      <workItem from="1575353695940" duration="5111000" />
+      <workItem from="1575367507592" duration="11059000" />
+      <workItem from="1575386210495" duration="1488000" />
+      <workItem from="1575461775954" duration="7625000" />
+      <workItem from="1575469635971" duration="4742000" />
     </task>
     <servers />
   </component>
@@ -283,5 +442,123 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="75" key="#Inspections" timestamp="1575377955576">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="75" key="#Inspections/0.0.1536.834@0.0.1536.834" timestamp="1575377955576" />
+    <state x="361" y="75" key="#Project_Structure" timestamp="1575386045505">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="75" key="#Project_Structure/0.0.1536.834@0.0.1536.834" timestamp="1575386045505" />
+    <state x="361" y="75" key="#SQL_Dialects" timestamp="1575355790373">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="361" y="75" key="#SQL_Dialects/0.0.1536.834@0.0.1536.834" timestamp="1575355790373" />
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575469912549">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1575469912549" />
+    <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1575381569484">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1575381569484" />
+    <state x="557" y="323" key="#com.intellij.javaee.module.view.web.EditWebRootDialog" timestamp="1575367881479">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="557" y="323" key="#com.intellij.javaee.module.view.web.EditWebRootDialog/0.0.1536.834@0.0.1536.834" timestamp="1575367881479" />
+    <state x="266" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1575385561518">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="266" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1575385561518" />
+    <state x="499" y="163" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575354030033">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="163" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1575354030033" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1575469841836">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1575469841836" />
+    <state width="1237" height="39" key="GridCell.Tab.0.bottom" timestamp="1575471167105">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1575471167105" />
+    <state width="1237" height="39" key="GridCell.Tab.0.center" timestamp="1575471167105">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1575471167105" />
+    <state width="1237" height="39" key="GridCell.Tab.0.left" timestamp="1575471167105">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1575471167105" />
+    <state width="1237" height="39" key="GridCell.Tab.0.right" timestamp="1575471167105">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1575471167105" />
+    <state width="1237" height="39" key="GridCell.Tab.1.bottom" timestamp="1575471166984">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1575471166984" />
+    <state width="1237" height="39" key="GridCell.Tab.1.center" timestamp="1575471166983">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1575471166983" />
+    <state width="1237" height="39" key="GridCell.Tab.1.left" timestamp="1575471166983">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1575471166983" />
+    <state width="1237" height="39" key="GridCell.Tab.1.right" timestamp="1575471166984">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1575471166984" />
+    <state width="1237" height="39" key="GridCell.Tab.2.bottom" timestamp="1575471166984">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1575471166984" />
+    <state width="1237" height="39" key="GridCell.Tab.2.center" timestamp="1575471166984">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1575471166984" />
+    <state width="1237" height="39" key="GridCell.Tab.2.left" timestamp="1575471166984">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1575471166984" />
+    <state width="1237" height="39" key="GridCell.Tab.2.right" timestamp="1575471166984">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1237" height="39" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1575471166984" />
+    <state x="349" y="151" key="IDE.errors.dialog" timestamp="1575474053505">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="349" y="151" key="IDE.errors.dialog/0.0.1536.834@0.0.1536.834" timestamp="1575474053505" />
+    <state x="422" y="114" key="NewModule_or_Project.wizard" timestamp="1575469845325">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="422" y="114" key="NewModule_or_Project.wizard/0.0.1536.834@0.0.1536.834" timestamp="1575469845325" />
+    <state x="263" y="0" key="SettingsEditor" timestamp="1575469889746">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="263" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1575469889746" />
+    <state x="478" y="56" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1575385537545">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="478" y="56" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.834@0.0.1536.834" timestamp="1575385537545" />
+    <state x="512" y="119" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1575382838716">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="512" y="119" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.834@0.0.1536.834" timestamp="1575382838716" />
+    <state x="447" y="155" width="642" height="524" key="find.popup" timestamp="1575379442065">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="447" y="155" width="642" height="524" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1575379442065" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1575377977162">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1575377977162" />
+    <state x="449" y="100" key="spring file set editor" timestamp="1575358101943">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="449" y="100" key="spring file set editor/0.0.1536.834@0.0.1536.834" timestamp="1575358101943" />
   </component>
 </project>

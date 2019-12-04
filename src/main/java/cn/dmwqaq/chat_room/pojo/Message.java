@@ -1,6 +1,8 @@
 package cn.dmwqaq.chat_room.pojo;
 
 import java.io.Serializable;
+import java.math.BigInteger;
+import java.util.Date;
 
 @SuppressWarnings("unused")
 public class Message implements Serializable {
@@ -10,18 +12,40 @@ public class Message implements Serializable {
     private String id;
     private String content;
     private String sourceUserId;
-    private String targetUserId;
-    private String createTime;
+    private String target;
+    private java.util.Date createTime;
     private boolean withdrawn;
 
-    public Message(String id, String content, String sourceUserId, String targetUserId, String createTime,
+    /**
+     * Default constructor
+     */
+    public Message(String id, String content, String sourceUserId, String target, Date createTime,
             boolean withdrawn) {
         this.id = id;
         this.content = content;
         this.sourceUserId = sourceUserId;
-        this.targetUserId = targetUserId;
+        this.target = target;
         this.createTime = createTime;
         this.withdrawn = withdrawn;
+    }
+
+    /**
+     * Constructor for JDBC
+     */
+    public Message(BigInteger id, java.sql.Timestamp createTime, String content, BigInteger sourceUserId,
+            String target, Boolean withdrawn) {
+        this.id = id.toString();
+        this.content = content;
+        this.sourceUserId = sourceUserId.toString();
+        this.target = target;
+        this.createTime = new java.util.Date(createTime.getTime());
+        this.withdrawn = withdrawn;
+    }
+
+    public Message(String content, String sourceUserId, String target) {
+        this.content = content;
+        this.sourceUserId = sourceUserId;
+        this.target = target;
     }
 
     public String getId() {
@@ -48,19 +72,19 @@ public class Message implements Serializable {
         this.sourceUserId = sourceUserId;
     }
 
-    public String getTargetUserId() {
-        return targetUserId;
+    public String getTarget() {
+        return target;
     }
 
-    public void setTargetUserId(String targetUserId) {
-        this.targetUserId = targetUserId;
+    public void setTarget(String target) {
+        this.target = target;
     }
 
-    public String getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
@@ -70,5 +94,12 @@ public class Message implements Serializable {
 
     public void setWithdrawn(boolean withdrawn) {
         this.withdrawn = withdrawn;
+    }
+
+    @Override
+    public String toString() {
+        return "Message{" + "id='" + id + '\'' + ", content='" + content + '\'' + ", sourceUserId='" + sourceUserId
+                + '\'' + ", targetUserId='" + target + '\'' + ", createTime=" + createTime + ", withdrawn="
+                + withdrawn + '}';
     }
 }
