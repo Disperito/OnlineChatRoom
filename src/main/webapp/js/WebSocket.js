@@ -26,6 +26,9 @@ function webSocketInit(userIdArg) {
                 }
             } else if ('message' === messageJSON.type) {
                 receive(messageJSON);
+            } else if ('record' === messageJSON.type) {
+                console.log(messageJSON);
+                renderRecentChatRecord(messageJSON);
             }
         };
 

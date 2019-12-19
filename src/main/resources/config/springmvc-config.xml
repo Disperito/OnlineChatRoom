@@ -18,6 +18,8 @@
     <context:component-scan base-package="cn.dmwqaq.chat_room.controller"/>
     <context:component-scan base-package="cn.dmwqaq.chat_room.service"/>
     <context:component-scan base-package="cn.dmwqaq.chat_room.server"/>
+    <context:component-scan base-package="cn.dmwqaq.chat_room.pojo.vo"/>
+
     <mvc:default-servlet-handler default-servlet-name="default"/>
 
 

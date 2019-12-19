@@ -18,8 +18,8 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/WebSocket.js"></script>
-    <script src="js/app.js"></script>
     <script src="js/chat.js"></script>
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -81,7 +81,15 @@
         <div class="col-xs-10">
             <div class="well" id="main_well">
                 <div class="well" id="dialog_well">
-                    <div class="message-container"></div>
+                    <div class="message-container">
+
+                        <div v-for="message in record" :class="messageClass(message)">
+                            <div class="message-source">{{message.sourceName}}</div>
+                            <div class="message-content">{{message.content}}</div>
+                            <div class="message-datetime">{{message.createTime}}</div>
+                        </div>
+
+                    </div>
                 </div>
                 <label for="input_area"></label>
                 <textarea rows="6" cols="130" id="input_area"></textarea>
@@ -135,6 +143,8 @@
         </div>
     </div>
 </div>
+
+<script src="js/app.js"></script>
 <script>
     afterLogin("${sessionScope.userName}");
 </script>

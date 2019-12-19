@@ -6,7 +6,7 @@ import cn.dmwqaq.chat_room.service.MessageService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Date;
+import java.util.List;
 
 @Service
 public class MessageServiceImpl implements MessageService {
@@ -21,10 +21,12 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public boolean create(Message message) throws Exception {
-        if (message.getCreateTime() == null) {
-            message.setCreateTime(new Date());
-        }
         return messageMapper.create(message) > 0;
+    }
+
+    @Override
+    public List<Message> listByTarget(String target) throws Exception {
+        return messageMapper.listByTarget(target);
     }
 
 //    @Override

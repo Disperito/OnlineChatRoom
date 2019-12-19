@@ -1,6 +1,7 @@
 package cn.dmwqaq.chat_room.server;
 
 import cn.dmwqaq.chat_room.pojo.Message;
+import cn.dmwqaq.chat_room.pojo.vo.MessageVO;
 import cn.dmwqaq.chat_room.service.MessageService;
 import cn.dmwqaq.chat_room.service.UserService;
 import com.alibaba.fastjson.JSONObject;
@@ -13,8 +14,10 @@ import javax.annotation.Resource;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")
 @Component
@@ -72,7 +75,7 @@ public class WebSocketServer {
         this.session = session;
 
         updateOnlineUserInformation(OnlineStatusChangeEvent.ONLINE);
-
+        sendRecentChatRecord();
     }
 
     @OnClose
@@ -90,7 +93,7 @@ public class WebSocketServer {
         }
 
         Message message = new Message(messageJson.getString("content"), messageJson.getString("source"),
-                messageJson.getString("target"));
+                                      messageJson.getString("target"));
         try {
             staticThis.messageService.create(message);
         } catch (Exception e) {
@@ -176,6 +179,26 @@ public class WebSocketServer {
             userInfoMap.put(key, name);
         }
         return name;
+    }
+
+    private void sendRecentChatRecord() {
+        List<Message> messages;
+        List<MessageVO> messageVOs = null;
+        try {
+            messages = staticThis.messageService.listByTarget(this.userId);
+            messageVOs = messages.stream()
+                                 .map(MessageVO::parse)
+                                 .collect(Collectors.toList());
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        }
+
+        JSONObject o = new JSONObject();
+        o.put("messages", messageVOs);
+        o.put("type", "record");
+        o.put("target", userId);
+        logger.trace(o);
+        sendMessage(o.toJSONString(), userId);
     }
 
     private static synchronized void addOnlineCount() {

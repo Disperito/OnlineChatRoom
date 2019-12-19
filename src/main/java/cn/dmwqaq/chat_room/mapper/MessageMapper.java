@@ -3,6 +3,8 @@ package cn.dmwqaq.chat_room.mapper;
 import cn.dmwqaq.chat_room.pojo.Message;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface MessageMapper {
 
@@ -10,5 +12,6 @@ public interface MessageMapper {
 
     int create(Message message) throws Exception;
 
+    List<Message> listByTarget(String target) throws Exception;
 //    int update(Message message) throws Exception;
 }

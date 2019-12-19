@@ -1,5 +1,7 @@
 let chatTarget = "all";
 let chatTargetName;
+let for_diglog_well;
+
 
 function login() {
     const idInput = $("#id_input");
@@ -61,6 +63,23 @@ function afterLogin(userName) {
         return;
     }
     setAfterLoginUI(userName);
+
+    for_diglog_well = new Vue({
+        el: '#dialog_well',
+        data: {
+            record: null
+        },
+        methods: {
+            messageClass: function (message) {
+                if (message['sourceName'] === thisUserName) {
+                    return 'message message-this'
+                } else {
+                    return 'message message-that'
+                }
+            }
+        },
+        computed: {}
+    });
 }
 
 function setAfterLoginUI(userName) {
@@ -75,6 +94,18 @@ function setAfterLoginUI(userName) {
 
 }
 
+function renderRecentChatRecord(messageJSON) {
+    var messages = messageJSON['messages'];
+    for (let i = 0; i < messages.length; i++) {
+        let message = messages[i];
+        const date = new Date(message.createTime);
+        message['createTime'] = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+        if (message['target'] !== 'all') {
+            message['sourceName'] = '[私聊] ' + message['sourceName'];
+        }
+    }
+    for_diglog_well.record = messageJSON['messages']
+}
 
 // function dev_updateOnlineList() {
 //     let id = $("#dev_user_id").val();

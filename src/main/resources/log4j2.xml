@@ -21,7 +21,7 @@
         </Root>
 
 
-        <logger name="cn.dmwqaq.chat_room.mapper" level="TRACE">
+        <logger name="cn.dmwqaq.chat_room.mapper" level="error">
             <AppenderRef ref="Console"/>
 <!--            <AppenderRef ref="webRootFile"/>-->
         </logger>

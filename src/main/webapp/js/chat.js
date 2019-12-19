@@ -8,7 +8,8 @@ function send() {
         alert('请输入内容');
         return;
     }
-    const datetime = dateFormat(new Date());
+    const newDate = new Date();
+    const datetime = newDate.toLocaleDateString() + ' ' + newDate.toLocaleTimeString();
 
     const sourceDOM = $("<div></div>").addClass("message-source").text(
         (isPrivateChat ? '[私聊 -> ' + chatTargetName + ']  ' : '') +
