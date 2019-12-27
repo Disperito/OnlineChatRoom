@@ -20,14 +20,13 @@ function webSocketInit(userIdArg) {
         websocket.onmessage = function (event) {
             const messageStr = event.data;
             const messageJSON = JSON.parse(messageStr);
-            if (messageJSON.type === 'notify') {
+            if (messageJSON['type'] === 'notify') {
                 if (messageJSON['function'] === 'updateOnlineList') {
-                    updateOnlineList(messageJSON.onlineUsers);
+                    updateOnlineList(messageJSON['onlineUsers']);
                 }
-            } else if ('message' === messageJSON.type) {
+            } else if ('message' === messageJSON['type']) {
                 receive(messageJSON);
-            } else if ('record' === messageJSON.type) {
-                console.log(messageJSON);
+            } else if ('record' === messageJSON['type']) {
                 renderRecentChatRecord(messageJSON);
             }
         };

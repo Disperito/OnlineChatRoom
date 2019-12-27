@@ -38,8 +38,10 @@ function receive(messageJSON) {
         return;
     }
 
-
-    const messageContainer = $(".message-container");
+    // let array = for_dialog_well.record;
+    // array[array.length] = messageJSON;
+    for_dialog_well.record.push(messageJSON);
+    /*const messageContainer = $(".message-container");
 
     let text = messageJSON['content'];
 
@@ -67,8 +69,9 @@ function receive(messageJSON) {
     messageDOM.append(sourceDOM);
     messageDOM.append(contentDOM);
     messageDOM.append(datetimeDOM);
-    messageContainer.append(messageDOM);
-    updateScroll();
+    messageContainer.append(messageDOM);*/
+    // updateScroll();
+    setTimeout(updateScroll, 300);
 }
 
 /*

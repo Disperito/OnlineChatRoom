@@ -133,13 +133,13 @@ function renderRecentChatRecord(messageJSON) {
         }
 
         // 文件类型的消息
-        const content = message['content'];
+       /* const content = message['content'];
         if (content.indexOf('dmwqaq-1300596096.cos.ap-shanghai.myqcloud.com') !== -1) {
             let fileName = decodeURI(content.substring(47, content.lastIndexOf('-')).replace('-', '.'));
 
             console.log("dmwqaq-1300596096.cos.ap-shanghai.myqcloud.com".length);
             message['content'] = "<a href=\"http://" + content + "\">" + fileName + "</a>"
-        }
+        }*/
 
     }
     for_dialog_well.record = messageJSON['messages'];

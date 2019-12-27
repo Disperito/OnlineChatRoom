@@ -88,6 +88,9 @@
 
                         <div v-for="message in record" :class="messageClass(message)">
                             <div class="message-source">{{message.sourceName}}</div>
+                            <div class="message-content" v-if="message.type == img">
+                                <img :src="'http://'+message.content">
+                            </div>
                             <div class="message-content" v-html="message.content"></div>
                             <div class="message-datetime">{{message.createTime}}</div>
                         </div>
