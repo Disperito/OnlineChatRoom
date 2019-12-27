@@ -30,6 +30,11 @@ public class User implements Serializable {
     private UserSex sex;
     private Date birthday;
 
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
+
     public User(String id, String name, String password, UserSex sex, Date birthday) {
         this.id = id;
         this.name = name;

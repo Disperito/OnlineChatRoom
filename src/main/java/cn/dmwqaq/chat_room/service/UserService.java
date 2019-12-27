@@ -6,7 +6,7 @@ public interface UserService {
 
     boolean update(User user) throws Exception;
 
-    boolean create(User user) throws Exception;
+    boolean insert(User user) throws Exception;
 
     User getById(String id) throws Exception;
 }

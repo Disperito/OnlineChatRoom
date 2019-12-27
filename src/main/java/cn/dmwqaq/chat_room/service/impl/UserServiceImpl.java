@@ -19,8 +19,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean create(User user) throws Exception {
-        return userMapper.create(user) > 0;
+    public boolean insert(User user) throws Exception {
+        return userMapper.insert(user) > 0;
     }
 
     @Override

@@ -12,11 +12,15 @@
         <result column="birthday"   property="birthday" javaType="java.util.Date"/>
     </resultMap>
 
-    <select id="getById" parameterType="java.lang.String" resultMap="userMap"
-            useCache="false" flushCache="true">
+    <select id="getById" parameterType="java.lang.String" resultMap="userMap">
         SELECT user_info.id, user_info.password, user_info.name, user_info.sex, user_info.birthday
         FROM user_info
         WHERE id = #{id}
     </select>
+
+    <insert id="insert" parameterType="cn.dmwqaq.chat_room.pojo.User" useGeneratedKeys="true" keyProperty="id">
+        insert into user_info(password, name, sex, birthday, create_time, update_time)
+        values (#{password}, #{name}, 1, now(), now(), now())
+    </insert>
 
 </mapper>

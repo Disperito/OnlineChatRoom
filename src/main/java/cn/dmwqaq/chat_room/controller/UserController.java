@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -61,4 +62,20 @@ public class UserController {
             response.getWriter().write("false");
         }
     }
+
+    @PostMapping(value = "/register", produces = "text/html; charset=UTF-8")
+    @ResponseBody
+    public String register(String username, String password) {
+
+        User user = new User(username, password);
+        try {
+            if (userService.insert(user)) {
+                return "注册成功，您的ID是" + user.getId();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "注册失败";
+    }
+
 }
