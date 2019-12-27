@@ -18,9 +18,11 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/cos-js-sdk-v5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/WebSocket.js"></script>
     <script src="js/chat.js"></script>
+    <script src="js/cos.js"></script>
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
@@ -58,6 +60,7 @@
     </div>
 </nav>
 
+
 <c:if test="${sessionScope.userId != null}" var="logged"/>
 <c:if test="${logged}">
 <script>webSocketInit(${sessionScope.userId})</script>
@@ -85,7 +88,7 @@
 
                         <div v-for="message in record" :class="messageClass(message)">
                             <div class="message-source">{{message.sourceName}}</div>
-                            <div class="message-content">{{message.content}}</div>
+                            <div class="message-content" v-html="message.content"></div>
                             <div class="message-datetime">{{message.createTime}}</div>
                         </div>
 
@@ -96,6 +99,10 @@
                 <button class="btn btn-default" id="send_btn" onclick="send()">发送</button>
             </div>
         </div>
+    </div>
+    <div class="row" style="position: relative; left: 200px; margin-top: 5px">
+        <input type="file" id="file">
+        <button class="btn btn-default" onclick="uploadFile()">发送文件</button>
     </div>
 </div>
 </c:if>
@@ -137,8 +144,40 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default">注册</button>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#register_modal">注册
+                </button>
                 <button type="button" class="btn btn-primary" id="login_btn" onclick="login()">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="register_modal" role="dialog" aria-labelledby="myModalTitle"
+     aria-describedby="This is a modal."
+     tabindex="-1">
+    <div class="modal-dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p class="modal-title">注册</p>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form" id="register_form">
+                    <div class="form-group">
+                        <label for="register_name" class="control-label">用户名</label>
+                        <input type="text" id="register_name" class="form-control">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="register_password" class="control-label">密码</label>
+                        <input type="password" id="register_password" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="register()">注册</button>
             </div>
         </div>
     </div>
