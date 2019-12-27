@@ -27,3 +27,4 @@ hs_err_pid*
 /src/main/webapp/WEB-INF/
 !src/main/webapp/WEB-INF/web.xml
 /src/main/resources/properties/
+/target/
