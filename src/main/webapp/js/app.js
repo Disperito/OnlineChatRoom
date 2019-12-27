@@ -1,6 +1,6 @@
 let chatTarget = "all";
 let chatTargetName;
-let for_diglog_well;
+let for_dialog_well;
 
 
 function login() {
@@ -29,6 +29,34 @@ function login() {
     });
 }
 
+function register() {
+    const username = $("#register_name").val();
+    const password = $("#register_password").val();
+
+    if (!username) {
+        alert('请输入用户名！');
+        return;
+    }
+    if (!password) {
+        alert('请输入密码！');
+        return;
+    }
+
+    $.ajax({
+        url: '/user/register',
+        type: 'POST',
+        data: {
+            username: username,
+            password: password
+        },
+        success: function (response_text) {
+            $("#register_modal").modal('hide');
+            $("#id_input").val(response_text.replace('注册成功，您的ID是', ''));
+            alert(response_text);
+        }
+    });
+}
+
 function loginValidate(id, password) {
     if (!id) {
         alert('ID不能为空！');
@@ -47,7 +75,7 @@ function loginValidate(id, password) {
 function logout() {
     $.ajax({
         url: 'user/logout',
-        type: 'POST',
+        type: 'delete',
         success: function (responseText) {
             if ('true' === responseText) {
                 location.reload();
@@ -64,7 +92,7 @@ function afterLogin(userName) {
     }
     setAfterLoginUI(userName);
 
-    for_diglog_well = new Vue({
+    for_dialog_well = new Vue({
         el: '#dialog_well',
         data: {
             record: null
@@ -95,7 +123,7 @@ function setAfterLoginUI(userName) {
 }
 
 function renderRecentChatRecord(messageJSON) {
-    var messages = messageJSON['messages'];
+    const messages = messageJSON['messages'];
     for (let i = 0; i < messages.length; i++) {
         let message = messages[i];
         const date = new Date(message.createTime);
@@ -103,14 +131,65 @@ function renderRecentChatRecord(messageJSON) {
         if (message['target'] !== 'all') {
             message['sourceName'] = '[私聊] ' + message['sourceName'];
         }
+
+        // 文件类型的消息
+        const content = message['content'];
+        if (content.indexOf('dmwqaq-1300596096.cos.ap-shanghai.myqcloud.com') !== -1) {
+            let fileName = decodeURI(content.substring(47, content.lastIndexOf('-')).replace('-', '.'));
+
+            console.log("dmwqaq-1300596096.cos.ap-shanghai.myqcloud.com".length);
+            message['content'] = "<a href=\"http://" + content + "\">" + fileName + "</a>"
+        }
+
     }
-    for_diglog_well.record = messageJSON['messages']
+    for_dialog_well.record = messageJSON['messages'];
+    setTimeout(updateScroll, 1000);
 }
 
-// function dev_updateOnlineList() {
-//     let id = $("#dev_user_id").val();
-//     let name = $("#dev_user_name").val();
-//     const userList = $("#user_list");
-//     let newLine = "<li><a onclick=\"chooseChatTarget('" + id + "','" + name + "')\">" + name + "</a></li>";
-//     userList.append(newLine);
-// }
+function uploadFile() {
+    const file = $("#file")[0].files[0];
+    let key = (file['name']).replace('.', '-') + '-' + new Date().getTime();
+    cos.putObject({
+        Bucket: Bucket,
+        Region: Region,
+        Key: key,
+        StorageClass: 'STANDARD',
+        Body: file,
+        onProgress: function (progressData) {
+            console.log(JSON.stringify(progressData));
+        }
+    }, function (err, data) {
+        console.log(err || data);
+        const location = data['Location'];
+        sendMessage(location, chatTarget);
+
+        let fileName = decodeURI(location.substring(47, location.lastIndexOf('-')).replace('-', '.'));
+        const text = "<a href=\"http://" + location + "\">" + fileName + "</a>";
+
+        let isPrivateChat = chatTarget !== 'all';
+        const messageContainer = $(".message-container");
+        const newDate = new Date();
+        const datetime = newDate.toLocaleDateString() + ' ' + newDate.toLocaleTimeString();
+
+        const sourceDOM = $("<div></div>").addClass("message-source").text(
+            (isPrivateChat ? '[私聊 -> ' + chatTargetName + ']  ' : '') +
+            thisUserName + '：');
+        const contentDOM = $("<div></div>").addClass("message-content").html(text);
+        contentDOM.html(contentDOM.html().replace(/\n/g, '<br/>'));
+        const datetimeDOM = $("<div></div>").addClass("message-datetime").text(datetime);
+        const messageDOM = $("<div></div>").addClass("message").addClass("message-this");
+
+        messageDOM.append(sourceDOM);
+        messageDOM.append(contentDOM);
+        messageDOM.append(datetimeDOM);
+        messageContainer.append(messageDOM);
+        updateScroll();
+    });
+}
+
+
+$("#register_modal").on('hide.bs.modal', function () {
+    $("#register_name").val('');
+    $("#register_password").val('');
+});
+

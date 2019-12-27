@@ -28,18 +28,8 @@ function send() {
     sendMessage(text, chatTarget);
 }
 
-function dateFormat(date) {
-    const yyyy = date.getFullYear();
-    const MM = date.getMonth() + 1;
-    const dd = date.getDate();
-    const HH = date.getHours()
-    const mm = date.getMinutes();
-    const ss = date.getSeconds();
-    return yyyy + '-' + MM + '-' + dd + '  ' + HH + ':' + mm + ':' + ss;
-}
-
 function updateScroll() {
-    const message = document.getElementById('dialog_well');
+    let message = document.getElementById('dialog_well');
     message.scrollTop = message.scrollHeight;
 }
 
@@ -48,16 +38,28 @@ function receive(messageJSON) {
         return;
     }
 
+
     const messageContainer = $(".message-container");
-    const text = messageJSON.content;
-    const datetime = dateFormat(new Date());
+
+    let text = messageJSON['content'];
+
+    // 文件类型的消息
+    if (text.indexOf('dmwqaq-1300596096.cos.ap-shanghai.myqcloud.com') !== -1) {
+        let fileName = decodeURI(text.substring(47, text.lastIndexOf('-')).replace('-', '.'));
+
+        console.log("dmwqaq-1300596096.cos.ap-shanghai.myqcloud.com".length);
+        text = "<a href=\"http://" + text + "\">" + fileName + "</a>"
+    }
+    // const text = messageJSON.content;
+    const newDate = new Date();
+    const datetime = newDate.toLocaleDateString() + ' ' + newDate.toLocaleTimeString();
     const sourceName = messageJSON.sourceName;
     const isPrivateChat = messageJSON.target !== 'all';
 
     const sourceDOM = $("<div></div>").addClass("message-source").text(
         (isPrivateChat ? '[私聊]  ' : '') +
         sourceName + '：');
-    const contentDOM = $("<div></div>").addClass("message-content").text(text);
+    const contentDOM = $("<div></div>").addClass("message-content").html(text);
     contentDOM.html(contentDOM.html().replace(/\n/g, '<br/>'));
     const datetimeDOM = $("<div></div>").addClass("message-datetime").text(datetime);
     const messageDOM = $("<div></div>").addClass("message").addClass("message-that");

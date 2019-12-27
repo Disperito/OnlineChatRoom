@@ -11,6 +11,21 @@
 
     <name>ChatRoom</name>
 
+    <repositories>
+        <repository>
+            <id>bintray-qcloud-maven-repo</id>
+            <name>qcloud-maven-repo</name>
+            <url>https://dl.bintray.com/qcloud/maven-repo/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.11</maven.compiler.source>
@@ -137,10 +152,18 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>com.tencent.cloud</groupId>
+            <artifactId>cos-sts-java</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+
+
+
     </dependencies>
 
     <build>
-        <directory>${project.basedir}/src/main/webapp/WEB-INF</directory>
+        <directory>${project.basedir}/target</directory>
         <finalName>ChatRoom</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
